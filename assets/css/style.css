@@ -1,0 +1,32 @@
+body {
+	background: yellow;
+	font-family: 'Righteous', cursive;
+	color: lightgrey;
+}
+
+header {
+	background: black;
+	text-align: center;
+	font-size: 3rem;
+}
+
+.col-md-4 {
+	background: lightblue;
+	color: black;
+	padding: 20px;
+	margin: 20px;
+}
+
+.col-md-12 {
+	background: lightblue;
+}
+
+/*footer*/
+footer {
+	background: black;
+	padding: 20px 0;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
