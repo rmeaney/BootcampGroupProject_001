@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rick's code</title>
+	</head>
+	<body>
+
+	<script>
+		var url = 'https://www.youtube.com/watch?v=9C_HReR_McQ';
+
+         //http://www.youtube.com/watch?v=SNfYz6Yw0W8&feature=g-all-esi would work also
+		var a = url.split("v=")[1];
+		var userStartTime = 60;
+		var userEndTime = 62;
+
+
+		a = a != undefined ? a : url.split("youtu.be/")[1];
+		b = a.split("&")[0];
+		document.write('https://www.youtube.com/embed/' + a + '?start=' + userStartTime +'&end='+userEndTime+'&version=3' );
+
+
+		//https://www.youtube.com/embed/
+		//youtubeId
+		//?start=62&end=63&version=3
+
+		//https://www.youtube.com/embed/lVhpRS5LNEk1start=51&end=54&version=3
+		//https://www.youtube.com/embed/GT3vhcy3XaQ?start=62&end=63&version=3
+	</script>
+
+	</body>
+</html>
