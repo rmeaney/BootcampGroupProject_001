@@ -4,19 +4,46 @@
 		<title>Rick's code</title>
 	</head>
 	<body>
+	
+	<h1>Create Youtube Start and stop points for youtube:</h1>
+	<form>
+	<label>Paste your youtube url here </label>
+	<br/>
+	<input type = "text" id = "userUrl">
+	<br/>
+	<label>Enter Start Time (seconds only right now)</label>
+	<br/>
+	<input type = "text" id = "userStartTimeField">
+	<br/>
+	<label>Enter End Time (seconds only right now)</label>
+	<br/>
+	<input type = "text" id = "userEndTimeField">
+	<br/>
+	<button id = "submitBTN">Make Link</button>
+	<br/>
+	</form>
+	<div id = "outputLink">Your link will go here</div>
 
+
+<script src ="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+	</script>
 	<script>
-		var url = 'https://www.youtube.com/watch?v=9C_HReR_McQ';
 
+	$('#submitBTN').on('click', function(event){
+		event.preventDefault();
+		$('#outputLink').html('');
+		var url = $('#userUrl').val().trim();
          //http://www.youtube.com/watch?v=SNfYz6Yw0W8&feature=g-all-esi would work also
 		var a = url.split("v=")[1];
-		var userStartTime = 60;
-		var userEndTime = 62;
+		var userStartTime = $('#userStartTimeField').val().trim();
+		var userEndTime = $('#userEndTimeField').val().trim();
 
 
 		a = a != undefined ? a : url.split("youtu.be/")[1];
 		b = a.split("&")[0];
-		document.write('https://www.youtube.com/embed/' + a + '?start=' + userStartTime +'&end='+userEndTime+'&version=3' );
+		$('#outputLink').append('https://www.youtube.com/embed/' + a + '?start=' + userStartTime +'&end='+userEndTime+'&version=3'+'<br/>');
+
+		$('#outputLink').append("<a href =" + "https://www.youtube.com/embed/" + a + '?start=' + userStartTime +'&end='+userEndTime+'&version=3'+ '>Click Here</a>' );
 
 
 		//https://www.youtube.com/embed/
@@ -25,6 +52,7 @@
 
 		//https://www.youtube.com/embed/lVhpRS5LNEk1start=51&end=54&version=3
 		//https://www.youtube.com/embed/GT3vhcy3XaQ?start=62&end=63&version=3
+		});
 	</script>
 
 	</body>
